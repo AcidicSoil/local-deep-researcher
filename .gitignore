@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .env
 
 __pycache__
@@ -10,7 +10,7 @@ data/
 *.egg-info/
 deep-researcher-tool-docs/
 uv.lock
-=======
+
 .langgraph_api
 .venv
 
@@ -23,4 +23,4 @@ deep-researcher-tool-docs/
 *.egg-info/
 .archived/
 *__pycache__*
->>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
+.relayforge/
