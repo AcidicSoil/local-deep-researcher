@@ -11,6 +11,10 @@ class SummaryState:
     sources_gathered: Annotated[list, operator.add] = field(default_factory=list)
     research_loop_count: int = field(default=0)  # Research loop count
     running_summary: str = field(default=None)  # Final report
+<<<<<<< HEAD
+=======
+    report_path: str = field(default=None)  # Where the markdown was saved
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 
 
 @dataclass(kw_only=True)
@@ -21,3 +25,7 @@ class SummaryStateInput:
 @dataclass(kw_only=True)
 class SummaryStateOutput:
     running_summary: str = field(default=None)  # Final report
+<<<<<<< HEAD
+=======
+    report_path: str = field(default=None)  # Where the markdown was saved
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)

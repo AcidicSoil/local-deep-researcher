@@ -1,4 +1,11 @@
 import json
+<<<<<<< HEAD
+=======
+import os
+import re
+from datetime import datetime
+from pathlib import Path
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 
 from pydantic import BaseModel, Field
 from typing_extensions import Literal
@@ -384,12 +391,27 @@ def reflect_on_summary(state: SummaryState, config: RunnableConfig):
     )
 
 
+<<<<<<< HEAD
+=======
+def _slugify(text: str, max_len: int = 80) -> str:
+    """Create a filesystem-safe filename from text."""
+    text = (text or "").strip().lower()
+    text = re.sub(r"[^a-z0-9]+", "-", text)
+    text = re.sub(r"-{2,}", "-", text).strip("-")
+    return (text or "report")[:max_len]
+
+
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 def finalize_summary(state: SummaryState):
     """LangGraph node that finalizes the research summary.
 
     Prepares the final output by deduplicating and formatting sources, then
     combining them with the running summary to create a well-structured
+<<<<<<< HEAD
     research report with proper citations.
+=======
+    research report with proper citations. Writes the report to a file.
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 
     Args:
         state: Current graph state containing the running summary and sources gathered
@@ -415,7 +437,21 @@ def finalize_summary(state: SummaryState):
     state.running_summary = (
         f"## Summary\n{state.running_summary}\n\n ### Sources:\n{all_sources}"
     )
+<<<<<<< HEAD
     return {"running_summary": state.running_summary}
+=======
+
+    # Write to file
+    out_dir = Path(os.getenv("REPORT_DIR", "reports"))
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"{ts}-{_slugify(state.research_topic)}.md"
+    path = out_dir / filename
+    path.write_text(state.running_summary, encoding="utf-8")
+
+    return {"running_summary": state.running_summary, "report_path": str(path)}
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 
 
 def route_research(

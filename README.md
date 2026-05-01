@@ -7,27 +7,46 @@ Local Deep Researcher is a fully local web research assistant that uses any LLM 
 Short summary video:
 <video src="https://github.com/user-attachments/assets/02084902-f067-4658-9683-ff312cab7944" controls></video>
 
+<<<<<<< HEAD
 ## 🔥 Updates 
 
 * 8/6/25: Added support for tool calling and [gpt-oss](https://openai.com/index/introducing-gpt-oss/). 
+=======
+## 🔥 Updates
+
+* 8/6/25: Added support for tool calling and [gpt-oss](https://openai.com/index/introducing-gpt-oss/).
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 
 > ⚠️ **WARNING (8/6/25)**: The `gpt-oss` models do not support JSON mode in Ollama. Select `use_tool_calling` in the configuration to use tool calling instead of JSON mode.
 
 ## 📺 Video Tutorials
 
 See it in action or build it yourself? Check out these helpful video tutorials:
+<<<<<<< HEAD
 - [Overview of Local Deep Researcher with R1](https://www.youtube.com/watch?v=sGUjmyfof4Q) - Load and test [DeepSeek R1](https://api-docs.deepseek.com/news/news250120) [distilled models](https://ollama.com/library/deepseek-r1).
 - [Building Local Deep Researcher from Scratch](https://www.youtube.com/watch?v=XGuTzHoqlj8) - Overview of how this is built.
+=======
+* [Overview of Local Deep Researcher with R1](https://www.youtube.com/watch?v=sGUjmyfof4Q) - Load and test [DeepSeek R1](https://api-docs.deepseek.com/news/news250120) [distilled models](https://ollama.com/library/deepseek-r1).
+* [Building Local Deep Researcher from Scratch](https://www.youtube.com/watch?v=XGuTzHoqlj8) - Overview of how this is built.
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 
 ## 🚀 Quickstart
 
 Clone the repository:
+<<<<<<< HEAD
+=======
+
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 ```shell
 git clone https://github.com/langchain-ai/local-deep-researcher.git
 cd local-deep-researcher
 ```
 
 Then edit the `.env` file to customize the environment variables according to your needs. These environment variables control the model selection, search tools, and other configuration settings. When you run the application, these values will be automatically loaded via `python-dotenv` (because `langgraph.json` point to the "env" file).
+<<<<<<< HEAD
+=======
+
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 ```shell
 cp .env.example .env
 ```
@@ -37,16 +56,30 @@ cp .env.example .env
 1. Download the Ollama app for Mac [here](https://ollama.com/download).
 
 2. Pull a local LLM from [Ollama](https://ollama.com/search). As an [example](https://ollama.com/library/deepseek-r1:8b):
+<<<<<<< HEAD
+=======
+
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 ```shell
 ollama pull deepseek-r1:8b
 ```
 
+<<<<<<< HEAD
 3. Optionally, update the `.env` file with the following Ollama configuration settings. 
 
 * If set, these values will take precedence over the defaults set in the `Configuration` class in `configuration.py`. 
 ```shell
 LLM_PROVIDER=ollama
 OLLAMA_BASE_URL="http://localhost:11434" # Ollama service endpoint, defaults to `http://localhost:11434` 
+=======
+1. Optionally, update the `.env` file with the following Ollama configuration settings.
+
+* If set, these values will take precedence over the defaults set in the `Configuration` class in `configuration.py`.
+
+```shell
+LLM_PROVIDER=ollama
+OLLAMA_BASE_URL="http://localhost:11434" # Ollama service endpoint, defaults to `http://localhost:11434`
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 LOCAL_LLM=model # the model to use, defaults to `llama3.2` if not set
 ```
 
@@ -55,6 +88,7 @@ LOCAL_LLM=model # the model to use, defaults to `llama3.2` if not set
 1. Download and install LMStudio from [here](https://lmstudio.ai/).
 
 2. In LMStudio:
+<<<<<<< HEAD
    - Download and load your preferred model (e.g., qwen_qwq-32b)
    - Go to the "Local Server" tab
    - Start the server with the OpenAI-compatible API
@@ -63,6 +97,17 @@ LOCAL_LLM=model # the model to use, defaults to `llama3.2` if not set
 3. Optionally, update the `.env` file with the following LMStudio configuration settings. 
 
 * If set, these values will take precedence over the defaults set in the `Configuration` class in `configuration.py`. 
+=======
+   * Download and load your preferred model (e.g., qwen_qwq-32b)
+   * Go to the "Local Server" tab
+   * Start the server with the OpenAI-compatible API
+   * Note the server URL (default: <http://localhost:1234/v1>)
+
+3. Optionally, update the `.env` file with the following LMStudio configuration settings.
+
+* If set, these values will take precedence over the defaults set in the `Configuration` class in `configuration.py`.
+
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 ```shell
 LLM_PROVIDER=lmstudio
 LOCAL_LLM=qwen_qwq-32b  # Use the exact model name as shown in LMStudio
@@ -71,7 +116,12 @@ LMSTUDIO_BASE_URL=http://localhost:1234/v1
 
 ### Selecting search tool
 
+<<<<<<< HEAD
 By default, it will use [DuckDuckGo](https://duckduckgo.com/) for web search, which does not require an API key. But you can also use [SearXNG](https://docs.searxng.org/), [Tavily](https://tavily.com/) or [Perplexity](https://www.perplexity.ai/hub/blog/introducing-the-sonar-pro-api) by adding their API keys to the environment file. Optionally, update the `.env` file with the following search tool configuration and API keys. If set, these values will take precedence over the defaults set in the `Configuration` class in `configuration.py`. 
+=======
+By default, it will use [DuckDuckGo](https://duckduckgo.com/) for web search, which does not require an API key. But you can also use [SearXNG](https://docs.searxng.org/), [Tavily](https://tavily.com/) or [Perplexity](https://www.perplexity.ai/hub/blog/introducing-the-sonar-pro-api) by adding their API keys to the environment file. Optionally, update the `.env` file with the following search tool configuration and API keys. If set, these values will take precedence over the defaults set in the `Configuration` class in `configuration.py`.
+
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 ```shell
 SEARCH_API=xxx # the search API to use, such as `duckduckgo` (default)
 TAVILY_API_KEY=xxx # the tavily API key to use
@@ -85,12 +135,20 @@ FETCH_FULL_PAGE=xxx # fetch the full page content (with `duckduckgo`), defaults 
 #### Mac
 
 1. (Recommended) Create a virtual environment:
+<<<<<<< HEAD
+=======
+
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 ```
 
+<<<<<<< HEAD
 2. Launch LangGraph server:
+=======
+1. Launch LangGraph server:
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 
 ```bash
 # Install uv package manager
@@ -100,9 +158,15 @@ uvx --refresh --from "langgraph-cli[inmem]" --with-editable . --python 3.11 lang
 
 #### Windows
 
+<<<<<<< HEAD
 1. (Recommended) Create a virtual environment: 
 
 * Install `Python 3.11` (and add to PATH during installation). 
+=======
+1. (Recommended) Create a virtual environment:
+
+* Install `Python 3.11` (and add to PATH during installation).
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 * Restart your terminal to ensure Python is available, then create and activate a virtual environment:
 
 ```powershell
@@ -110,12 +174,20 @@ python -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
 
+<<<<<<< HEAD
 2. Launch LangGraph server:
+=======
+1. Launch LangGraph server:
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 
 ```powershell
 # Install dependencies
 pip install -e .
+<<<<<<< HEAD
 pip install -U "langgraph-cli[inmem]"            
+=======
+pip install -U "langgraph-cli[inmem]"
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 
 # Start the LangGraph server
 langgraph dev
@@ -126,11 +198,19 @@ langgraph dev
 When you launch LangGraph server, you should see the following output and Studio will open in your browser:
 > Ready!
 
+<<<<<<< HEAD
 > API: http://127.0.0.1:2024
 
 > Docs: http://127.0.0.1:2024/docs
 
 > LangGraph Studio Web UI: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
+=======
+> API: <http://127.0.0.1:2024>
+
+> Docs: <http://127.0.0.1:2024/docs>
+
+> LangGraph Studio Web UI: <https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024>
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 
 Open `LangGraph Studio Web UI` via the URL above. In the `configuration` tab, you can directly set various assistant configurations. Keep in mind that the priority order for configuration values is:
 
@@ -149,6 +229,7 @@ Give the assistant a topic for research, and you can visualize its process!
 ### Model Compatibility Note
 
 When selecting a local LLM, set steps use structured JSON output. Some models may have difficulty with this requirement, and the assistant has fallback mechanisms to handle this. As an example, the [DeepSeek R1 (7B)](https://ollama.com/library/deepseek-llm:7b) and [DeepSeek R1 (1.5B)](https://ollama.com/library/deepseek-r1:1.5b) models have difficulty producing required JSON output, and the assistant will use a fallback mechanism to handle this.
+<<<<<<< HEAD
   
 ### Browser Compatibility Note
 
@@ -156,6 +237,15 @@ When accessing the LangGraph Studio UI:
 - Firefox is recommended for the best experience
 - Safari users may encounter security warnings due to mixed content (HTTPS/HTTP)
 - If you encounter issues, try:
+=======
+
+### Browser Compatibility Note
+
+When accessing the LangGraph Studio UI:
+* Firefox is recommended for the best experience
+* Safari users may encounter security warnings due to mixed content (HTTPS/HTTP)
+* If you encounter issues, try:
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
   1. Using Firefox or another browser
   2. Disabling ad-blocking extensions
   3. Checking browser console for specific error messages
@@ -163,6 +253,7 @@ When accessing the LangGraph Studio UI:
 ## How it works
 
 Local Deep Researcher is inspired by [IterDRAG](https://arxiv.org/html/2410.04343v1#:~:text=To%20tackle%20this%20issue%2C%20we,used%20to%20generate%20intermediate%20answers.). This approach will decompose a query into sub-queries, retrieve documents for each one, answer the sub-query, and then build on the answer by retrieving docs for the second sub-query. Here, we do similar:
+<<<<<<< HEAD
 - Given a user-provided topic, use a local LLM (via [Ollama](https://ollama.com/search) or [LMStudio](https://lmstudio.ai/)) to generate a web search query
 - Uses a search engine / tool to find relevant sources
 - Uses LLM to summarize the findings from web search related to the user-provided research topic
@@ -170,6 +261,15 @@ Local Deep Researcher is inspired by [IterDRAG](https://arxiv.org/html/2410.0434
 - It generates a new search query to address the knowledge gaps
 - The process repeats, with the summary being iteratively updated with new information from web search
 - Runs for a configurable number of iterations (see `configuration` tab)
+=======
+* Given a user-provided topic, use a local LLM (via [Ollama](https://ollama.com/search) or [LMStudio](https://lmstudio.ai/)) to generate a web search query
+* Uses a search engine / tool to find relevant sources
+* Uses LLM to summarize the findings from web search related to the user-provided research topic
+* Then, it uses the LLM to reflect on the summary, identifying knowledge gaps
+* It generates a new search query to address the knowledge gaps
+* The process repeats, with the summary being iteratively updated with new information from web search
+* Runs for a configurable number of iterations (see `configuration` tab)
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 
 ## Outputs
 
@@ -188,13 +288,18 @@ There are [various ways](https://langchain-ai.github.io/langgraph/concepts/#depl
 ## TypeScript Implementation
 
 A TypeScript port of this project (without Perplexity search) is available at:
+<<<<<<< HEAD
 https://github.com/PacoVK/ollama-deep-researcher-ts
+=======
+<https://github.com/PacoVK/ollama-deep-researcher-ts>
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 
 ## Running as a Docker container
 
 The included `Dockerfile` only runs LangChain Studio with local-deep-researcher as a service, but does not include Ollama as a dependant service. You must run Ollama separately and configure the `OLLAMA_BASE_URL` environment variable. Optionally you can also specify the Ollama model to use by providing the `LOCAL_LLM` environment variable.
 
 Clone the repo and build an image:
+<<<<<<< HEAD
 ```
 $ docker build -t local-deep-researcher .
 ```
@@ -207,14 +312,38 @@ $ docker run --rm -it -p 2024:2024 \
   -e LLM_PROVIDER=ollama \
   -e OLLAMA_BASE_URL="http://host.docker.internal:11434/" \
   -e LOCAL_LLM="llama3.2" \  
+=======
+
+```
+docker build -t local-deep-researcher .
+```
+
+Run the container:
+
+```
+$ docker run --rm -it -p 2024:2024 \
+  -e SEARCH_API="tavily" \
+  -e TAVILY_API_KEY="tvly-***YOUR_KEY_HERE***" \
+  -e LLM_PROVIDER=ollama \
+  -e OLLAMA_BASE_URL="http://host.docker.internal:11434/" \
+  -e LOCAL_LLM="llama3.2" \
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
   local-deep-researcher
 ```
 
 NOTE: You will see log message:
+<<<<<<< HEAD
+=======
+
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 ```
 2025-02-10T13:45:04.784915Z [info     ] 🎨 Opening Studio in your browser... [browser_opener] api_variant=local_dev message=🎨 Opening Studio in your browser...
 URL: https://smith.langchain.com/studio/?baseUrl=http://0.0.0.0:2024
 ```
+<<<<<<< HEAD
+=======
+
+>>>>>>> e4de684 (Add initial project structure with configuration, Docker setup, and example environment file)
 ...but the browser will not launch from the container.
 
 Instead, visit this link with the correct baseUrl IP address: [`https://smith.langchain.com/studio/thread?baseUrl=http://127.0.0.1:2024`](https://smith.langchain.com/studio/thread?baseUrl=http://127.0.0.1:2024)
