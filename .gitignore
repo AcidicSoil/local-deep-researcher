@@ -8,3 +8,4 @@ data/
 .langgraph_api
 *.egg-info/
 deep-researcher-tool-docs/
+uv.lock
