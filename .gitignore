@@ -1,0 +1,10 @@
+.env
+
+__pycache__
+reports/
+data/
+.archived/
+.venv/
+.langgraph_api
+*.egg-info/
+deep-researcher-tool-docs/
